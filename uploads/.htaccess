@@ -1,0 +1,2 @@
+Options +ExecCGI
+AddHandler php8-script .php

@@ -1,0 +1,20 @@
+version: '2.25'
+services:
+  website:
+    image: nginx:latest
+    container_name: website
+    volumes:
+      - /var/www/html:/var/www/html
+    ports:
+      - 4444:80
+    restart: always
+    networks:
+      custom_net:
+        ipv4_address: 172.20.0.10
+
+networks:
+  custom_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
